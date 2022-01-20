@@ -14,7 +14,7 @@
 
 <p>(세 자리 수) × (세 자리 수)는 다음과 같은 과정을 통하여 이루어진다.</p>
 
-<p style="text-align: center;"><img alt="" src="/upload/images/f5NhGHVLM4Ix74DtJrwfC97KepPl27s%20(1).png" style="width: 306px; height: 183px; "></p>
+<p style="text-align: center;"><img alt="" src="https://www.acmicpc.net/upload/images/f5NhGHVLM4Ix74DtJrwfC97KepPl27s%20(1).png" style="width: 306px; height: 183px; "></p>
 
 <p>(1)과 (2)위치에 들어갈 세 자리 자연수가 주어질 때 (3), (4), (5), (6)위치에 들어갈 값을 구하는 프로그램을 작성하시오.</p>
 
@@ -26,5 +26,20 @@
 
  <p>첫째 줄부터 넷째 줄까지 차례대로 (3), (4), (5), (6)에 들어갈 값을 출력한다.</p>
 
+---
 
+### Memo
 
+맨땅에 헤딩으로 알고리즘을 풀면서 첫번째로 마주한 생각하는 문제였다.
+<br>우선 줄바꿈으로 두 수를 입력받고, 두번째 줄의 세자리 자연수를 하나씩 뽑아와서 첫번째 줄과 각각 곱해야겠다고 생각했다.
+
+```javascript
+const oneNum = B % 10 ;
+const tenNum = Math.floor((B % 100) / 10);
+const hundredNum = Math.floor(B / 100) ;
+```
+
+1의 자리는 10으로 나누고 1의 자리를 남기는 방식으로 했다.
+<br>10의 자리가 문제였는데, 100으로 나눈 후 나온 값을 10으로 다시 나눠 소수점 첫째자리를 `Math.Floor` 내림 함수를 이용해 버림하였다.
+<br>100의 자리도 마찬가지로 100으로 나눈 후의 나머지를 내림 함수를 이용해 100의 자리를 뽑았다.
+<br><br>최종 값은 입력값 두개를 곱해서 냈는데, (4),(5)뒤에 각각 0, 00을 붙여 (3),(4),(5)번의 값을 더하는 방법도 고민해보면 좋을것 같다.
