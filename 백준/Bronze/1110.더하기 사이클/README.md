@@ -28,5 +28,27 @@
 
  <p>첫째 줄에 N의 사이클 길이를 출력한다.</p>
 
+---
 
+### Memo
+이번문제는 유난히 논리를 세우는게 어려웠다. 수학적 사고가 정말 안되고 있다는걸 느낀 문제이다. 고수분들의 코드를 참고해서 이해한 후 직접 논리에 맞게 다시 짜보았다.
+
+```javascript
+let fs = require('fs');
+let input = fs.readFileSync('dev/stdin').toString();
+
+let origin = Number(input); // 아래에서 input값이 계속 바뀌므로 처음 input값을 계속 가지고있을 변수 origin을 만들어준다.
+let count = 0;
+
+while (true) {
+	let sum = Math.floor(input/10) + (input%10); // input값을 10으로 나눈 후 소수점을 버리면 10의자리, input을 10으로 나눈 후 나머지를 구하면 1의 자리가 나온다.
+	input = (input%10)*10 + (sum%10); // 아까나온 1의 자리에 10을 곱해 10의 자리로 만들어주고, sum값을 10으로 나눈 후 나머지를 새로운 1의 자리로 만든다.
+	
+	count++ // 0부터 시작해 반복문이 실행될때마다 1씩 오른다.
+	
+	if ( origin == input ) break; // 반복해서 나온 input값과 처음의 origin값이 같다면 멈춘다.
+}
+
+console.log( count ); // 반복문이 실행된 숫자를 출력.
+```
 
