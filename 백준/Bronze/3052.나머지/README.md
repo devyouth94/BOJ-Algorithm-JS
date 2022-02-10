@@ -41,4 +41,11 @@ let arr2 = [...set]; // Set 메서드는 값이 Set {a, b, c...}형식으로 나
 let result = arr2.length; // arr2배열의 길이값을 출력하면 서로 다른 값이 몇개인지 알수 있다.
 
 console.log( result );
+
+//let arr2 = [...set];
+//let result = arr2.length;
+//console.log( result );
+
+//위에 코드 세줄 없이 아래의 코드로 set.size를 사용해 값을 바로 구할수 있다.
+console.log( set.size );
 ```
