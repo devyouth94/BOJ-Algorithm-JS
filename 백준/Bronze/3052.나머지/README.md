@@ -24,5 +24,21 @@
 
  <p>첫째 줄에, 42로 나누었을 때, 서로 다른 나머지가 몇 개 있는지 출력한다.</p>
 
+---
 
+### Memo
+배열은 새로운 메서드들이 쏟아져 나오다보니 직접 고민해보고 쳐보는 시간이 많아야겠다는걸 느꼈다.
 
+```javascript
+const fs = require('fs');
+const input = fs.readFileSync('dev/stdin').toString().trim().split('\n'); //처음에 trim()을 안했더니 오류가 났다. 백준에서 풀때 함정같은 것....
+
+let numbers = input.map(Number); //input 값들을 숫자형으로 변환
+
+let arr = numbers.map(el => el%42); //map을 이용해 배열 내 요소들을 42으로 나눈 나머지값으로 새롭게 반환
+let set = new Set(arr); // Set 메서드를 이용해 중복되는 값들은 없앤다.
+let arr2 = [...set]; // Set 메서드는 값이 Set {a, b, c...}형식으로 나오기 때문에 값들을 복사해 새로운 변수에 넣는다.
+let result = arr2.length; // arr2배열의 길이값을 출력하면 서로 다른 값이 몇개인지 알수 있다.
+
+console.log( result );
+```
