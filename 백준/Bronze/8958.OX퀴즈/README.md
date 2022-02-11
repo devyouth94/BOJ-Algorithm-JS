@@ -26,5 +26,29 @@
 
  <p>각 테스트 케이스마다 점수를 출력한다.</p>
 
+### Memo
 
+연속으로 맞췄을때 보너스 점수 넣는 방식을 생각해 내는게 너무 어려웠다. 숫자가 1씩 늘어나는 값을 써야할 때는 `++`증가 연산자 를 일단 떠올려야겠다.
 
+```javascript
+const fs = require('fs');
+const input = fs.readFileSync('dev/stdin').toString().trim().split('\n');
+
+let caseNum = Number(input[0]); // 테스트 케이스 갯수
+
+for ( let i = 1; i <= caseNum; i++ ) { // 테스트 케이스 숫자 만큼 반복문 실행
+	let score = 0;
+	let sum = 0;
+	
+	for ( let j = 0; j < input[i].length; j++ ) { // 배열의 길이 만큼 반복문 실행
+		if ( input[i][j] === 'O' ) { // 요소가 'O'면 점수를 1점 올리고, 아니면 0점 처리한다.
+			score++;
+		} else {
+			score = 0;
+		}
+		sum += score;
+	}
+	
+	console.log( sum );
+}
+```
