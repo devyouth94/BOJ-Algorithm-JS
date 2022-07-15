@@ -5,13 +5,13 @@ function solution(participant, completion) {
     completion.sort();
 
     for(let i=0; i<participant.length; i++) {
-    if (participant[i] !== completion[i]) {
+        if (participant[i] !== completion[i]) {
 
-    answer = participant[i];
+        answer = participant[i];
 
-    break;
-  }
-}
+        break;
+        } 
+    }
     
     return answer;
 }
