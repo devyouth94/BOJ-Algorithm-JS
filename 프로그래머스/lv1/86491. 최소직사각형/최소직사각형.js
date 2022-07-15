@@ -1,8 +1,8 @@
 function solution(sizes) {
     var answer = 0;
     
-    let long = [];
-    let short = [];
+    let left = [];
+    let right = [];
 
     for (let i = 0; i < sizes.length; i++) {
 
@@ -10,19 +10,19 @@ function solution(sizes) {
       let height = sizes[i][1];
 
       if ( width >= height ){
-        long.push(width);
-        short.push(height);
+        left.push(width);
+        right.push(height);
       } else {
-        long.push(height);
-        short.push(width);
+        left.push(height);
+        right.push(width);
       }
 
     }
 
-    long.sort( (a, b) => b - a );
-    short.sort( (a, b) => b - a );
+    left.sort( (a, b) => b - a );
+    right.sort( (a, b) => b - a );
 
-    answer = (long.shift() * short.shift());
+    answer = (left.shift() * right.shift());
     
     return answer;
 }
