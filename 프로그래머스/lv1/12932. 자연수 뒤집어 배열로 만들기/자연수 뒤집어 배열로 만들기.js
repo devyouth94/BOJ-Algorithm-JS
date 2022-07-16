@@ -1,7 +1,3 @@
-function solution(n) {
-    var answer = [];
-    
-    answer = String(n).split("").map(Number).reverse();
-    
-    return answer;
+function solution(n){  
+    return String(n).split("").map(Number).reverse();
 }
