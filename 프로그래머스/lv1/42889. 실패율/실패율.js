@@ -8,11 +8,13 @@ function solution(N, stages) {
       arr.push([failPeople / totalPeople, i]);
     }
 
+    console.log(arr);
+    
     arr.sort((a, b) => {
       if (a[0] === b[0]) {
-        return a[1] - b[1]
+        return a[1] - b[1];
       } else {
-        return b[0] - a[0]
+        return b[0] - a[0];
       }
     });
     
