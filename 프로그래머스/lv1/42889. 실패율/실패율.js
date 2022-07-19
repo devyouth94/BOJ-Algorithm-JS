@@ -2,13 +2,13 @@ function solution(N, stages) {
     let arr = [];
 
     for(let i = 1; i <= N; i++) {
-      let failPeople = stages.filter(item => item == i).length;
+      let failPeople = stages.filter(item => item == i).length; //3
       let totalPeople = stages.length - stages.filter(item => item < i).length;
 
       arr.push([failPeople / totalPeople, i]);
     }
 
-    console.log(arr);
+    
     
     arr.sort((a, b) => {
       if (a[0] === b[0]) {
