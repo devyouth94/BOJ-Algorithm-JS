@@ -5,7 +5,7 @@ function solution(n, arr1, arr2) {
     // [ '1001', '10100', '11100', '10010', '1011' ] [ '11110', '1', '10101', '10001', '11100' ]
 
     // 결과값을 넣을 빈배열 생성
-    let result = [];
+    let answer = [];
 
     // 한변의 크기 n 만큼 for문을 돌린다.
     for(let i = 0; i < n; i++) {
@@ -18,18 +18,18 @@ function solution(n, arr1, arr2) {
       }
       // [ '01001', '10100', '11100', '10010', '01011' ] [ '11110', '00001', '10101', '10001', '11100' ]
 
-      let binarySum = "";
+      let result = "";
 
       for(let j = 0; j < n; j++) {
         if(binaryArr1[i][j] == 1 || binaryArr2[i][j] == 1) {
-          binarySum += "#";
+          result += "#";
         } else {
-          binarySum += " ";
+          result += " ";
         }
       }
 
-      result.push(binarySum);
+      answer.push(result);
     }
     
-    return result;
+    return answer;
 }
