@@ -1,6 +1,8 @@
 function solution(dartResult) {
     let round = dartResult.match(/(\d+)([SDT])([*|#]?)/gi);
-
+    
+    console.log(round);
+    
     let arr = [];
 
     for(let i=0; i < round.length; i++) {
@@ -22,6 +24,8 @@ function solution(dartResult) {
 
       arr.push((round[i][1] == "0" ? 10 : round[i][0]) ** sdt * prize);
     }
+    
+    console.log(arr);
     
     return arr.reduce((s, c)=> s + c, 0);
 }
